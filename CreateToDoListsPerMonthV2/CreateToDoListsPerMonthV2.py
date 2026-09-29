@@ -11,11 +11,13 @@ MEDS_MORNING = "- [ ] take meds morning\n"
 MEDS_NIGHT = "- [ ] take meds night\n"
 TECH_EXERCISE = "- [ ] tech exercise\n"
 EXERCISE = "- [ ] exercise\n"
-PICK_UP = "- [ ] pick up Abigail\n" 
+PICK_UP = "- [ ] pick up gf\n" 
 TRASH = "- [ ] trash bin\n" 
 MAIL = "- [ ] mail\n" 
 BUDGET = "- [ ] budget\n" 
 TODO_LIST = "- [ ] to do list\n"
+BACKUP_OBSIDIAN = "- [ ] backup Obsidian\n"
+
 
 def determine_days_in_month(month):
     ## do not care about leap years
@@ -37,6 +39,9 @@ def generate_special_todo_tasks(day):
 
     if day_of_week == 2: # exery Tuesday
         tasks.append(TRASH)
+
+    if day_of_week == 7:
+        tasks.append(BACKUP_OBSIDIAN)
 
     if day_of_week == 1 or day_of_week == 4: # every Monday and Thursday
         tasks.append(MAIL)
